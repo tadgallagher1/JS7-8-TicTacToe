@@ -1,0 +1,42 @@
+.container {
+    background: rgb(211, 211, 219);
+    background: linear-gradient(0deg, rgba(211, 211, 219, 1) 28%, rgba(9, 9, 121, 1) 61%);
+    padding-bottom: 350px;
+}
+
+.title {
+    border: solid 2px black;
+    margin-bottom: 10px;
+    padding: 10px;
+    margin-left: 595px;
+    margin-right: 595px;
+    text-align: center;
+    color: navy;
+    background: whitesmoke;
+    background-size: 10px 10px;
+}
+
+input[type="button"] {
+    background-color: yellow;
+    color: black;
+    border: solid black 2px;
+    padding: 0, 0, 0, 50px;
+    width: 160px;
+    height: 50px;
+}
+
+input[type="text"] {
+    background-color: white;
+    height: 50px;
+    text-align: center;
+    font-size: 24px;
+    width: 100px;
+}
+
+#enter-name {
+    background-color: white;
+    height: 50px;
+    text-align: center;
+    font-size: 24px;
+    width: 200px;
+}

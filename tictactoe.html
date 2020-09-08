@@ -1,0 +1,235 @@
+<html>
+
+<head>
+    <script>
+
+//function that display value
+function validate(cell) {
+    
+            var box = document.getElementById(cell);
+            
+            if (box.value != "" && box.value.toUpperCase ()!= "X" && box.value.toUpperCase() != "O") {
+                alert("Invalid character: " + box.value.toUpperCase());
+            } else if (box.value.toUpperCase() == "X" || box.value.toUpperCase() == "O"){
+                box.disabled = true;
+            }
+        }
+
+/*
+
+        //function that display value
+        function validate(cell) {
+            var box1 = document.getElementById("1").value;
+            var box2 = document.getElementById("2").value;
+            var box3 = document.getElementById("3").value;
+            var box4 = document.getElementById("4").value;
+            var box5 = document.getElementById("5").value;
+            var box6 = document.getElementById("6").value;
+            var box7 = document.getElementById("7").value;
+            var box8 = document.getElementById("8").value;
+            var box9 = document.getElementById("9").value;
+
+
+            // Disable cell when onBlue 
+            /* if (box1) {
+                document.getElementById("1").Disable = "true";
+            } */
+
+            // End Disable                   
+/*
+            if (cell == "1" && box1.toUpperCase() != "X" && box1.toUpperCase() != "O") {
+                alert("Invalid Character");
+
+            }else if (cell == "1" && box1.toUpperCase() == "X" || box1.toUpperCase() == "O") {
+                document.getElementById("1").disabled = true;
+            }
+
+
+            if (cell == "2" && box2.toUpperCase() != "X" && box2.toUpperCase() != "O") {
+                alert("Invalid Character");
+
+            }
+            if (cell == "3" && box3.toUpperCase() != "X" && box3.toUpperCase() != "O") {
+                alert("Invalid Character");
+
+            }
+            if (cell == "4" && box4.toUpperCase() != "X" && box4.toUpperCase() != "O") {
+                alert("Invalid Character");
+
+            }
+            if (cell == "5" && box5.toUpperCase() != "X" && box5.toUpperCase() != "O") {
+                alert("Invalid Character");
+
+            }
+            if (cell == "6" && box6.toUpperCase() != "X" && box6.toUpperCase() != "O") {
+                alert("Invalid Character");
+
+            }
+            if (cell == "7" && box7.toUpperCase() != "X" && box7.toUpperCase() != "O") {
+                alert("Invalid Character");
+
+            }
+            if (cell == "8" && box8.toUpperCase() != "X" && box8.toUpperCase() != "O") {
+                alert("Invalid Character");
+
+            }
+            if (cell == "9" && box9.toUpperCase() != "X" && box9.toUpperCase() != "O") {
+                alert("Invalid Character");
+
+            }
+        }
+*/
+        //function that clears the display 
+        function clr() {
+            document.getElementById("1").value = "";
+            document.getElementById("2").value = "";
+            document.getElementById("3").value = "";
+            document.getElementById("4").value = "";
+            document.getElementById("5").value = "";
+            document.getElementById("6").value = "";
+            document.getElementById("7").value = "";
+            document.getElementById("8").value = "";
+            document.getElementById("9").value = "";
+        }
+        function whoWon() {
+            var champ = " No One";
+            var move = "";
+            var moves = ["X", "O"];
+            var winner = false;
+            var box1 = document.getElementById("1").value;
+            var box2 = document.getElementById("2").value;
+            var box3 = document.getElementById("3").value;
+            var box4 = document.getElementById("4").value;
+            var box5 = document.getElementById("5").value;
+            var box6 = document.getElementById("6").value;
+            var box7 = document.getElementById("7").value;
+            var box8 = document.getElementById("8").value;
+            var box9 = document.getElementById("9").value;
+
+            for (var index = 0; index < moves.length; index++) {
+                move = moves[index];
+                if ((box1.toUpperCase() == move) &&
+                    (box2.toUpperCase() == move) &&
+                    (box3.toUpperCase() == move)) {
+                    winner = true;
+                    // alert("WINNER!!!");
+                }
+                if ((box4.toUpperCase() == move) &&
+                    (box5.toUpperCase() == move) &&
+                    (box6.toUpperCase() == move)) {
+                    winner = true;
+                    // alert("WINNER!!!");
+                }
+                if ((box7.toUpperCase() == move) &&
+                    (box8.toUpperCase() == move) &&
+                    (box9.toUpperCase() == move)) {
+                    winner = true;
+                    //  alert("WINNER!!!");
+                }
+                if ((box1.toUpperCase() == move) &&
+                    (box4.toUpperCase() == move) &&
+                    (box7.toUpperCase() == move)) {
+                    winner = true;
+                    //   alert("WINNER!!!");
+                }
+                if ((box2.toUpperCase() == move) &&
+                    (box5.toUpperCase() == move) &&
+                    (box8.toUpperCase() == move)) {
+                    winner = true;
+                    //     alert("WINNER!!!");
+                }
+                if ((box3.toUpperCase() == move) &&
+                    (box6.toUpperCase() == move) &&
+                    (box9.toUpperCase() == move)) {
+                    winner = true;
+                    //    alert("WINNER!!!");
+                }
+                if ((box1.toUpperCase() == move) &&
+                    (box5.toUpperCase() == move) &&
+                    (box9.toUpperCase() == move)) {
+                    winner = true;
+                    //    alert("WINNER!!!");
+                }
+                if ((box3.toUpperCase() == move) &&
+                    (box5.toUpperCase() == move) &&
+                    (box7.toUpperCase() == move)) {
+                    winner = true;
+                    //   alert("WINNER!!!");
+                }
+                if (champ == " No One" && winner == true) {
+                    champ = move;
+                }
+
+
+
+            }
+            if (winner == true) {
+                alert("WINNER!!! " + champ)
+            } else {
+                alert("LOSER!!!")
+            }
+
+        }
+    </script>
+
+
+    <!-- for styling -->
+    <style>
+        .title {
+            margin-bottom: 10px;
+            padding-left: 20px;
+            text-align: center;
+            color: green;
+        }
+
+        input[type="button"] {
+            background-color: yellow;
+            color: black;
+            border: solid black 2px;
+            padding: 0, 0, 0, 50px;
+            width: 160px;
+            height: 50px;
+        }
+
+        input[type="text"] {
+            background-color: white;
+            height: 100px;
+            text-align: center;
+            font-size: 24px;
+            width: 100px;
+        }
+    </style>
+</head>
+<!-- create table -->
+
+<body>
+    <div class=title>
+        <h1>Tic Tac Toe</h1>
+    </div>
+    <table border="1">
+        <tr height=50px>
+            <!-- create button and assign value to each button -->
+            <td><input type="text" value="" id="1" onblur="validate('1')" /> </td>
+            <td><input type="text" value="" id="2" onblur="validate('2')" /> </td>
+            <td><input type="text" value="" id="3" onblur="validate('3')" /> </td>
+        </tr>
+        <tr height=50px>
+            <td><input type="text" value="" id="4" onblur="validate('4')" /> </td>
+            <td><input type="text" value="" id="5" onblur="validate('5')" /> </td>
+            <td><input type="text" value="" id="6" onblur="validate('6')" /> </td>
+        </tr>
+        <tr height=50px>
+            <td><input type="text" value="" id="7" onblur="validate('7')" /> </td>
+            <td><input type="text" value="" id="8" onblur="validate('8')" /> </td>
+            <td><input type="text" value="" id="9" onblur="validate('9')" /> </td>
+        </tr>
+    </table>
+    <tr>
+        <!-- clr() function will call clr to clear board -->
+        <td><input type="button" value="RESET" onclick="clr()" /> </td>
+        <td><input type="button" value="Do We Have A Winner?" onclick="whoWon()" /> </td>
+
+    </tr>
+</body>
+
+</html>
